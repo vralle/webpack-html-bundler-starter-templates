@@ -1,16 +1,42 @@
 {
-  "[javascript][typescript][javascriptreact][typescriptreact]": {
-    // See https://dprint.dev/plugins/typescript/
+  "[css]": {
     "editor.defaultFormatter": "dprint.dprint"
   },
-  "[json][jsonc]": {
-    // See https://dprint.dev/plugins/json/
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[javascript]": {
     "editor.defaultFormatter": "dprint.dprint"
   },
+  "[json]": {
+    "editor.defaultFormatter": "dprint.dprint"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "dprint.dprint"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+  },
+  "[scss]": {
+    // Stylelint can't be a formatter, so dprint (with malva) is used as the default formatter
+    // @see https://github.com/stylelint/vscode-stylelint/issues/384
+    "editor.defaultFormatter": "dprint.dprint",
+    "editor.formatOnSave": false,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.stylelint": "explicit"
+    }
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "dprint.dprint"
+  },
+  // Plugins
   "eslint.useESLintClass": true,
   "eslint.useFlatConfig": true,
   "livePreview.serverRoot": "projects",
-  "files.associations": {
-    "projects/tailwindcss-postcss/src/css/**/*.css": "tailwindcss"
-  }
+  "stylelint.validate": [
+    "css",
+    "postcss",
+    "scss",
+    "html"
+  ]
 }

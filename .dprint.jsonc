@@ -1,27 +1,40 @@
 {
   "indentWidth": 2,
-  "lineWidth": 1000,
   "newLineKind": "lf",
   "useTabs": false,
-  "json": { // See https://dprint.dev/plugins/json/
+  "lineWidth": 1000,
+  "json": {
     // This would be good to do in known-JSONC files, but VS Code warns on trailing commas.
-    "trailingCommas": "never"
+    "trailingCommas": "never",
+    "jsonTrailingCommaFiles": ["settings.json", "tsconfig.json"]
   },
-  "typescript": { // See https://dprint.dev/plugins/typescript/
+  "malva": {
+    "blockSelectorLinebreak": "always",
+    "declarationOrder": "smacss",
+    "formatComments": true,
+    "hexColorLength": "short",
+    "keyframeSelectorNotation": "percentage",
+    "linebreakInPseudoParens": true,
+    "omitNumberLeadingZero": true,
+    "preferSingleLine": false, // experimental.
+    "quotes": "preferDouble",
+    "singleLineBlockThreshold": null
+  },
+  "typescript": {
     "lineWidth": 180,
-    "newLineKind": "lf",
     "quoteProps": "asNeeded",
     "quoteStyle": "preferDouble",
     "semiColons": "always"
   },
-  "excludes": [
-    "**/.git",
-    "**/node_modules",
-    "**/*-lock.json",
-    "**/dist"
-  ],
   "plugins": [
-    "https://plugins.dprint.dev/typescript-0.93.3.wasm",
-    "https://plugins.dprint.dev/json-0.19.4.wasm"
+    "https://plugins.dprint.dev/typescript-0.93.4.wasm",
+    "https://plugins.dprint.dev/json-0.19.4.wasm",
+    "https://plugins.dprint.dev/g-plane/malva-v0.11.1.wasm"
+  ],
+  "excludes": [
+    "**/.git/**",
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/*-lock.json"
   ]
 }

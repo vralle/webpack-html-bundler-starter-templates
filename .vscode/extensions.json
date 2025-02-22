@@ -1,12 +1,10 @@
 {
   "recommendations": [
-    "dprint.dprint",
-    "EditorConfig.EditorConfig",
-    "jock.svg",
-    "ms-azuretools.vscode-docker",
-    "redhat.vscode-xml",
-    "redhat.vscode-yaml",
     "streetsidesoftware.code-spell-checker",
+    "ms-azuretools.vscode-docker",
+    "ms-vscode-remote.remote-containers",
+    "DavidAnson.vscode-markdownlint",
+    "dprint.dprint",
     "stylelint.vscode-stylelint"
   ]
 }
