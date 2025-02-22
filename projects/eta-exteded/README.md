@@ -1,7 +1,7 @@
 # Eta with Markdown support
 
-This is an extended [Eta template engine](https://eta.js.org/) allows you to load Markdown
-files using Eta template loader and [markdown-it](https://github.com/markdown-it/markdown-it).
+This is an extended [Eta template engine](https://eta.js.org/) allows you to load
+and parse Markdown files using Eta template loader and [markdown-it](https://github.com/markdown-it/markdown-it).
 
 ```html
 <%~ include("./path-to-partial.md") %>
@@ -45,9 +45,9 @@ Then, in your JS file:
 
 ```js
 import { resolve } from "node:path";
-import EtaMarkdownLoader from "@vralle/eta-markdown-loader";
+import EtaExtended from "@vralle/eta-extended";
 
-const eta = new EtaMarkdownLoader({
+const eta = new EtaExtended({
   defaultExtension: ".html",
   tags: ["{{", "}}"],
   views: resolve("./", "views"),
@@ -70,9 +70,9 @@ Another way to configure `markdown-it` is to specify options in the `markdownItC
 
 ```js
 import { resolve } from "node:path";
-import EtaMarkdownLoader from "@vralle/eta-markdown-loader";
+import EtaExtended from "@vralle/eta-extended";
 
-const eta = new EtaMarkdownLoader({
+const eta = new EtaExtended({
   defaultExtension: ".html",
   tags: ["{{", "}}"],
   views: resolve("./", "views"),

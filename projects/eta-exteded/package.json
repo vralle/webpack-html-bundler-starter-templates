@@ -1,7 +1,7 @@
 {
   "name": "@vralle/eta-extended",
   "version": "0.1.0",
-  "description": "Extended Eta with Markdown support for template file loader.",
+  "description": "Extended Eta templating engine with support for loading and parsing Markdown template files.",
   "license": "MIT",
   "type": "module",
   "main": "./dist/index.js",
