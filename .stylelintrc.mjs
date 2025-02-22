@@ -3,7 +3,7 @@
  * @see https://stylelint.io/user-guide/configure/
  * @type {import('stylelint').Config}
  */
-export default {
+const stylelintConfig = {
   extends: "stylelint-config-standard",
   cache: true,
   ignoreFiles: [
@@ -13,11 +13,17 @@ export default {
   overrides: [
     {
       files: [
-        "*.html",
+        "**/*.scss",
       ],
-      extends: [
-        "stylelint-config-html",
+      extends: "stylelint-config-standard-scss",
+    },
+    {
+      files: [
+        "**/*.html",
       ],
+      extends: "stylelint-config-html",
     },
   ],
 };
+
+export default stylelintConfig;
