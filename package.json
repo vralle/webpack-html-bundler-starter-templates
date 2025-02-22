@@ -8,7 +8,8 @@
   "scripts": {
     "build": "npm run build --workspaces --if-present",
     "format": "npm run format --workspaces --if-present",
-    "lint:js": "eslint --fix-dry-run --cache --cache-location .cache/.eslintcache ."
+    "lint:js": "eslint --fix-dry-run --cache --cache-location .cache/.eslintcache .",
+    "lint:md": "markdownlint-cli2 \"**/*.md\" \"#**/node_modules/**\""
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
@@ -18,6 +19,7 @@
     "dprint": "^0.49.0",
     "globals": "^16.0.0",
     "malva": "^0.11.1",
+    "markdownlint-cli2": "^0.17.2",
     "stylelint": "^16.14.1",
     "stylelint-config-html": "^1.1.0",
     "stylelint-config-standard": "^37.0.0",
