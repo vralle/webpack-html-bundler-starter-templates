@@ -50,7 +50,7 @@ function defaultLogger(vnuReport, files) {
         messages.push(output.join("\n"));
     }
     if (messages.length > 0) {
-        console.error("\n" + messages.join("\n\n") + "\n");
+        console.error(["", messages.join("\n\n"), ""].join("\n"));
     }
     console.info(styleText("blue", `Checked ${files.length} file(s)`));
     if (nonDocumentErrors.length) {
