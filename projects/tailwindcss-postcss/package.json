@@ -12,6 +12,8 @@
     "format": "dprint fmt",
     "lint": "npm-run-all --aggregate-output --parallel lint:html lint:styles lint:js",
     "lint:js": "eslint --fix-dry-run --cache --cache-location .cache/.eslintcache .",
+    "lint:sort-css-classes": "prettier --check src/**/*.{css,scss,html}",
+    "lint:styles": "stylelint \"**/*.{css,scss,html}\" --cache --cache-location .cache/.stylelintcache",
     "lint:html": "node scripts/nu-html-checker.mjs"
   },
   "devDependencies": {
@@ -29,7 +31,10 @@
     "mini-svg-data-uri": "^1.4.4",
     "npm-run-all2": "^7.0.2",
     "postcss": "^8.5.3",
+    "prettier": "^3.5.2",
+    "prettier-plugin-tailwindcss": "^0.6.11",
     "sharp": "^0.33.5",
+    "stylelint-config-tailwindcss": "^1.0.0",
     "svgo": "^3.3.2",
     "swc-loader": "^0.2.6",
     "swc-minify-webpack-plugin": "^2.1.3",
