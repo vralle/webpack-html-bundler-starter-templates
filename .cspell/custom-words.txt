@@ -5,6 +5,8 @@ contenthash
 devcontainers
 dprint
 lightningcss
+linkify
+malva
 popperjs
 stylelintcache
 twbs

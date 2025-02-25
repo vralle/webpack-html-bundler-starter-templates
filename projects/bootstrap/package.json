@@ -13,7 +13,8 @@
     "lint": "npm-run-all --aggregate-output --parallel lint:html lint:styles lint:js",
     "lint:js": "eslint --fix-dry-run --cache --cache-location .cache/.eslintcache .",
     "lint:styles": "stylelint \"**/*.{css,scss}\" --cache --cache-location .cache/.stylelintcache",
-    "lint:html": "node scripts/nu-html-checker.mjs"
+    "lint:html": "node scripts/nu-html-checker.mjs",
+    "lint:spelling": "cspell lint --show-context  \"**/*.{html,md}\""
   },
   "devDependencies": {
     "@babel/preset-env": "^7.26.9",

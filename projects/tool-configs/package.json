@@ -9,7 +9,7 @@
   "scripts": {
     "build": "tsc",
     "format": "dprint fmt",
-    "lint": "eslint --fix-dry-run --cache --cache-location .cache/.eslintcache ."
+    "lint:js": "eslint --fix-dry-run --cache --cache-location .cache/.eslintcache ."
   },
   "devDependencies": {
     "@types/clean-css": "^4.2.11",
