@@ -8,6 +8,7 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsc",
+    "format": "dprint check",
     "lint:spelling": "cspell lint --show-context  \"**/*.{html,md}\""
   },
   "dependencies": {

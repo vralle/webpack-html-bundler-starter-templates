@@ -8,7 +8,7 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "format": "dprint fmt",
+    "format": "dprint check",
     "lint:js": "eslint --fix-dry-run --cache --cache-location .cache/.eslintcache ."
   },
   "devDependencies": {
