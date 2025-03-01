@@ -4,9 +4,6 @@
     "dockerfile": "../Dockerfile",
     "context": ".."
   },
-  "remoteEnv": {
-    "TZ": "${localEnv:TZ:Europe/Berlin}"
-  },
   "remoteUser": "node", // More info: https://aka.ms/dev-containers-non-root
   "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
   "mounts": [
@@ -14,8 +11,8 @@
   ],
   "workspaceFolder": "/workspace",
   "updateContentCommand": {
-    "Update owner of files in workspace dir": "sudo chown -R node /workspace",
-    "Update access permissions of files in workspace dir": "sudo chmod -R 1777 /workspace",
+    "Update ownership of files in the workspace dir": "sudo chown -R node /workspace",
+    "Update access permissions of files in the workspace dir": "sudo chmod -R 1777 /workspace",
     "Update global packages": "sudo npm update -g && npm cache clean --force > /dev/null 2>&1"
   },
   "postCreateCommand": "npm install",

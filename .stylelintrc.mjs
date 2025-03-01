@@ -21,7 +21,7 @@ const stylelintConfig = {
       files: [
         "**/*.html",
       ],
-      extends: "stylelint-config-html",
+      extends: "stylelint-config-html/html",
     },
   ],
 };

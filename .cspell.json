@@ -16,7 +16,6 @@
   ],
   "useGitignore": true,
   "ignorePaths": [
-    ".cspell/",
-    "**/dist"
+    ".cspell/"
   ]
 }

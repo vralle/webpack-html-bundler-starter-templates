@@ -11,7 +11,6 @@ import url, { URL } from "node:url";
 
 const __filename = url.fileURLToPath(new URL(import.meta.url));
 const __dirname = dirname(__filename);
-
 const root = join(__dirname, "..");
 
 /** @type {ProjectPaths} */

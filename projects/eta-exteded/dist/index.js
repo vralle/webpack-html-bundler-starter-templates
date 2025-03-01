@@ -1,12 +1,12 @@
 import { Eta, EtaFileResolutionError } from "eta";
 import { default as MarkdownIt } from "markdown-it";
 import { readFileSync } from "node:fs";
-class EtaMarkdownLoader extends Eta {
-    markdownit;
+class EtaExtended extends Eta {
+    markdownIt;
     constructor(customConfig) {
         const { markdownItConfig = {}, ...etaConfig } = customConfig || {};
         super(etaConfig);
-        this.markdownit = new MarkdownIt("default", markdownItConfig);
+        this.markdownIt = new MarkdownIt("default", markdownItConfig);
     }
     readFile = (path) => {
         let res = "";
@@ -21,9 +21,9 @@ class EtaMarkdownLoader extends Eta {
             throw err;
         }
         if (/\.md$/i.test(path)) {
-            return this.markdownit.render(res);
+            return this.markdownIt.render(res);
         }
         return res;
     };
 }
-export default EtaMarkdownLoader;
+export default EtaExtended;

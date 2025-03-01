@@ -3,9 +3,9 @@ import { default as MarkdownIt, type Options as MarkdownItOptions } from "markdo
 interface ExtendedEtaConfig extends Partial<EtaConfig> {
     markdownItConfig?: MarkdownItOptions;
 }
-declare class EtaMarkdownLoader extends Eta {
-    markdownit: MarkdownIt;
+declare class EtaExtended extends Eta {
+    markdownIt: MarkdownIt;
     constructor(customConfig?: ExtendedEtaConfig);
     readFile: (path: string) => string;
 }
-export default EtaMarkdownLoader;
+export default EtaExtended;

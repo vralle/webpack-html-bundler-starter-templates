@@ -7,7 +7,7 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc --build",
     "format": "dprint check",
     "lint:js": "eslint --fix-dry-run --cache --cache-location .cache/.eslintcache ."
   },

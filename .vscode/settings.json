@@ -1,9 +1,19 @@
 {
+  // File format
+  "editor.tabSize": 2,
+  "files.encoding": "utf8",
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
   "[css]": {
     "editor.defaultFormatter": "dprint.dprint"
   },
+  "[dockerfile]": {
+    "files.insertFinalNewline": false,
+    "files.trimFinalNewlines": true
+  },
   "[html]": {
-    "editor.defaultFormatter": "vscode.html-language-features"
+    "editor.tabSize": 4
   },
   "[javascript]": {
     "editor.defaultFormatter": "dprint.dprint"
@@ -15,12 +25,13 @@
     "editor.defaultFormatter": "dprint.dprint"
   },
   "[markdown]": {
-    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
+    "editor.tabSize": 4
   },
   "[scss]": {
-    // Stylelint can't be a formatter, so dprint (with malva) is used as the default formatter
+    // Stylelint can't be a formatter
     // @see https://github.com/stylelint/vscode-stylelint/issues/384
-    "editor.defaultFormatter": "dprint.dprint",
+    "editor.defaultFormatter": "vscode.css-language-features",
     "editor.formatOnSave": false,
     "editor.codeActionsOnSave": {
       "source.fixAll.stylelint": "explicit"

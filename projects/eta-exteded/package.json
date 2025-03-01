@@ -1,13 +1,13 @@
 {
   "name": "@vralle/eta-extended",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Extended Eta templating engine with support for loading and parsing Markdown template files.",
   "license": "MIT",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc --build",
     "format": "dprint check",
     "lint:spelling": "cspell lint --show-context  \"**/*.{html,md}\""
   },

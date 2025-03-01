@@ -6,12 +6,12 @@ interface ExtendedEtaConfig extends Partial<EtaConfig> {
   markdownItConfig?: MarkdownItOptions;
 }
 
-class EtaMarkdownLoader extends Eta {
-  markdownit: MarkdownIt;
+class EtaExtended extends Eta {
+  markdownIt: MarkdownIt;
   constructor(customConfig?: ExtendedEtaConfig) {
     const { markdownItConfig = {}, ...etaConfig } = customConfig || {};
     super(etaConfig);
-    this.markdownit = new MarkdownIt("default", markdownItConfig);
+    this.markdownIt = new MarkdownIt("default", markdownItConfig);
   }
 
   override readFile = (path: string): string => {
@@ -28,11 +28,11 @@ class EtaMarkdownLoader extends Eta {
     }
 
     if (/\.md$/i.test(path)) {
-      return this.markdownit.render(res);
+      return this.markdownIt.render(res);
     }
 
     return res;
   };
 }
 
-export default EtaMarkdownLoader;
+export default EtaExtended;

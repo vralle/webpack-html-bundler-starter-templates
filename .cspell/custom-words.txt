@@ -1,13 +1,21 @@
 # Custom Dictionary Words
 alpinejs
+Anson
 browserslistrc
 contenthash
+dbaeumer
 devcontainers
 dprint
+evenodd
+filterpattern
 lightningcss
 linkify
 malva
+nodir
 popperjs
+Ralle
+smacss
 stylelintcache
 twbs
+Vitaliy
 vralle
