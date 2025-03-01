@@ -5,7 +5,6 @@ A collection of shareable configurations for common frontend build tools and opt
 ## Features
 
 - Pre-configured optimization settings for popular tools
-- TypeScript support with type definitions
 - Easy to extend and customize
 - Consistent settings across projects
 
@@ -18,7 +17,7 @@ A collection of shareable configurations for common frontend build tools and opt
 - [PostCSS](https://postcss.org/) - A tool for transforming CSS with JavaScript;
 - [Sharp.js](https://github.com/lovell/sharp) - High performance Node.js image processing;
 - [SVGO](https://svgo.dev/) - SVG Optimizer for Node.js and CLI;
-- [@swc/html](https://swc.rs/docs/usage/html) Fast HTML Minifier;
+- [@swc/html](https://swc.rs/docs/usage/html) - Fast HTML Minifier;
 - [terser](https://terser.org/) - JavaScript mangler and compressor toolkit;
 
 ## Usage
@@ -67,7 +66,3 @@ MIT License - See [LICENSE](../../LICENSE) file for details.
 3. Commit your changes (`git commit -m 'Add some amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
-
-## Author
-
-Vitaliy Ralle - [GitHub](https://github.com/vralle)

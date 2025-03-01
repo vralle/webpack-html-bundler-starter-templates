@@ -43,35 +43,37 @@ Bootstrap features can be customized in `src/scss/_options.scss`:
 
 The build process is configured in `webpack.config.mjs` with the following key features:
 
-- CSS/JS/HTML minification in production
+- JS/CSS/HTML minification in production
 - Source maps in development
 - Integrity hash generation
-- SVG optimization with SVGO
+- Preload tags generation
 
 ### JavaScript Processing
 
-- JavaScript compilation using SWC
-- Code minification with SWC
+- Compilation using SWC
+- Minification with SWC
 
 ### Style Processing
 
-- SCSS compilation using sass-embedded
+- SCSS compilation using `sass-embedded`
 - CSS minification with Lightning CSS
 
 ### Asset Handling
 
+- SVG optimization with SVGO
 - SVG files under 3KB are automatically converted to data URIs
+- Processing binary images with `sharp`
 - Font files are not embedded by default
 - Asset paths maintain their directory structure in the output
 
 ### Build Output
 
-Production builds are generated in the `dist` directory by default.
+Production builds are generated in `dist` directory by default.
 
-### Browser Support
+## Browser Support
 
-Browser targeting is configured in the `.browserslistrc` file in
-root of the workspace. The template uses this configuration for:
+Browser targeting is configured in `.browserslistrc` file (workspace-wide
+by default). The template uses this configuration for:
 
 - JavaScript transpilation (SWC)
 - CSS optimization (Lightning CSS)

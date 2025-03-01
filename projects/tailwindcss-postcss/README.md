@@ -21,7 +21,7 @@ development environment with optimized production builds.
 ```bash
 npm run start        # Development server
 npm run build        # Production build (relative URLs)
-npm run build:public # Production build with a public URL
+npm run build:public # Production build with public URL
 ```
 
 ### Linting and Validation
@@ -38,30 +38,39 @@ npm run lint:spelling # Check spelling in HTML and Markdown files
 
 ### Webpack
 
-The webpack configuration (`webpack.config.mjs`) includes:
+The build process is configured in `webpack.config.mjs` with the following key features:
 
-- SWC for JavaScript transpilation
-- PostCSS with Tailwind CSS processing
-- Image optimization with SVG special handling
-- HTML bundling with minification
+- JS/CSS/HTML minification in production
+- Source maps in development
+- Integrity hash generation
+- Preload tags generation
 
-### Tailwind CSS
+### JavaScript Processing
 
-Tailwind is configured in `tailwind.config.mjs`.
+- Compilation using SWC
+- Minification with SWC
 
-### Asset Handling
+### Style Processing
 
+- PostCSS+Tailwind is configured in `tailwind.config.mjs`.
+
+- SVG optimization with SVGO
 - SVG files under 3KB are automatically converted to data URIs
+- Processing binary images with `sharp`
 - Font files are not embedded by default
 - Asset paths maintain their directory structure in the output
 
+### Build Output
+
+Production builds are generated in `dist` directory by default.
+
 ## Browser Support
 
-Browser compatibility is managed through Browserslist configuration.
-The template uses this for:
+Browser targeting is configured in `.browserslistrc` file (workspace-wide
+by default). The template uses this configuration for:
 
 - JavaScript transpilation (SWC)
-- CSS optimization
+- Vendor prefixing (Lightning CSS)
 
 ## Contributing
 
@@ -79,5 +88,7 @@ MIT License - See [LICENSE](../../LICENSE) file for details.
 
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Alpine.js](https://alpinejs.dev/)
+- [Webpack](https://webpack.js.org/)
 - [HTML Bundler Plugin](https://github.com/webdiscus/html-bundler-webpack-plugin)
 - [SWC](https://swc.rs/)
+- [Lightning CSS](https://lightningcss.dev/)

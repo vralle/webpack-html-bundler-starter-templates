@@ -9,14 +9,14 @@ and advanced build tooling.
 - Multiple optimized starter templates for different use cases
 - Shared configuration packages and utilities
 - Comprehensive HTML validation and testing tools
-- Modern build tooling with SWC, Lightning CSS, and more
+- Modern build tooling Webpack 5 and more
 - Container-ready development environment
 
 ## Project Structure
 
 ```console
-├── bootstrap/           # Classic Bootstrap 5 template
-├── bootstrap-edge/      # Modern Bootstrap 5 template with cutting-edge tools
+├── bootstrap/           # Bootstrap 5 template with classic tools
+├── bootstrap-edge/      # Bootstrap 5 template with cutting-edge tools
 ├── tailwindcss-postcss/ # TailwindCSS + Alpine.js template
 ├── eta-extended/        # Extended Eta template engine with Markdown support
 ├── nu-html-checker/     # HTML validation tool
@@ -55,39 +55,38 @@ This repository is optimized for development in containers:
 
 ### Bootstrap Classic Template
 
-Traditional template using Bootstrap v5 with proven build tools:
+Template using Bootstrap v5 with proven build tools:
 
-- Bootstrap v5 integration
 - Babel + Terser for JavaScript
-- SCSS + PostCSS + Clean CSS for styles
+- SCSS + Autoprefixer + Clean CSS for styles
 
 ### Bootstrap Edge Template
 
-Modern template using cutting-edge build tools:
+Template using cutting-edge build tools:
 
-- Bootstrap v5 integration
-- SWC for JavaScript compilation
-- SCSS + Lightning CSS for style optimization
+- SWC for JavaScript
+- SCSS + Lightning CSS for styles
 
 ### TailwindCSS Template
 
-Modern template using TailwindCSS and Alpine.js:
+Template using TailwindCSS and Alpine.js:
 
 - TailwindCSS v4 for utility-first styling
 - Alpine.js v3 for lightweight interactivity
-- SWC for JavaScript compilation
+- SWC for JavaScript
 
 ## Common Scripts
 
 ```bash
 npm run start         # Development server
-npm run build         # Production build
+npm run build         # Production build + HTML validation
+npm run build:public  # Production build with public URL
 npm run format        # Lint files with dprint formatter
-npm run lint:js       # Lint JavaScript/TypeScript files
-npm run lint:styles   # Lint SCSS/CSS files
+npm run lint:js       # Lint JavaScript/TypeScript files with EsLint
+npm run lint:styles   # Lint SCSS/CSS/HTML files with Stylelint
 npm run lint:md       # Lint Markdown files
 npm run lint:html     # Validate HTML files using W3C standards
-npm run lint:spelling # Check spelling in HTML and Markdown files
+npm run lint:spelling # Check spelling in HTML/Markdown files
 ```
 
 ## Utility Packages
@@ -97,7 +96,7 @@ npm run lint:spelling # Check spelling in HTML and Markdown files
 Extended Eta template engine with Markdown support:
 
 - Seamless integration with Eta
-- Markdown file parsing with markdown-it
+- Markdown file parsing with `markdown-it`
 - Configurable markdown options
 
 ### `@vralle/nu-html-checker`
@@ -139,8 +138,8 @@ for details.
 
 - [Webpack](https://webpack.js.org/)
 - [HTML Bundler Plugin](https://github.com/webdiscus/html-bundler-webpack-plugin)
+- [SWC](https://swc.rs/)
+- [Lightning CSS](https://lightningcss.dev/)
 - [Bootstrap](https://getbootstrap.com/)
 - [TailwindCSS](https://tailwindcss.com/)
 - [Alpine.js](https://alpinejs.dev/)
-- [SWC](https://swc.rs/)
-- [Lightning CSS](https://lightningcss.dev/)

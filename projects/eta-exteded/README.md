@@ -51,7 +51,7 @@ template.
 This is the content of the web page
 ```
 
-This is a markdown file that will be automatically parsed.
+Then in your js:
 
 ```js
 import { resolve } from "node:path";
@@ -90,7 +90,7 @@ Output:
 
 ### Configuring markdown-it
 
-1\. Using the `markdownItConfig` option during initialization:
+1\. Using `markdownItConfig` option during initialization:
 
   ```js
   import { resolve } from "node:path";
@@ -108,7 +108,7 @@ Output:
   });
   ```
 
-2\. Using the `markdown-it` property after initialization:
+2\. Using `markdown-it` property after initialization:
 
 ```js
 const eta = new EtaExtended();
@@ -136,12 +136,12 @@ interface ExtendedEtaConfig extends Partial<EtaConfig> {
 }
 ```
 
-- `markdownItConfig`: Optional configuration object for markdown-it
-- All standard Eta configuration options are supported
+- All Eta options are supported
+- `markdownItConfig`: Optional configuration object for `markdown-it`
 
 #### Properties
 
-- `markdownIt`: The markdown-it instance used for parsing markdown files
+- `markdownIt`: The `markdown-it` instance used for parsing markdown files
 
 ## License
 
