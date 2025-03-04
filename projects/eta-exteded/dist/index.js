@@ -3,8 +3,8 @@ import { default as MarkdownIt } from "markdown-it";
 import { readFileSync } from "node:fs";
 class EtaExtended extends Eta {
     markdownIt;
-    constructor(customConfig) {
-        const { markdownItConfig = {}, ...etaConfig } = customConfig || {};
+    constructor(config) {
+        const { markdownItConfig = {}, ...etaConfig } = config || {};
         super(etaConfig);
         this.markdownIt = new MarkdownIt("default", markdownItConfig);
     }

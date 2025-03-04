@@ -8,8 +8,8 @@ interface ExtendedEtaConfig extends Partial<EtaConfig> {
 
 class EtaExtended extends Eta {
   markdownIt: MarkdownIt;
-  constructor(customConfig?: ExtendedEtaConfig) {
-    const { markdownItConfig = {}, ...etaConfig } = customConfig || {};
+  constructor(config?: ExtendedEtaConfig) {
+    const { markdownItConfig = {}, ...etaConfig } = config || {};
     super(etaConfig);
     this.markdownIt = new MarkdownIt("default", markdownItConfig);
   }
@@ -35,4 +35,5 @@ class EtaExtended extends Eta {
   };
 }
 
+export { type ExtendedEtaConfig };
 export default EtaExtended;

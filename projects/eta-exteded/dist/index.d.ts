@@ -5,7 +5,8 @@ interface ExtendedEtaConfig extends Partial<EtaConfig> {
 }
 declare class EtaExtended extends Eta {
     markdownIt: MarkdownIt;
-    constructor(customConfig?: ExtendedEtaConfig);
+    constructor(config?: ExtendedEtaConfig);
     readFile: (path: string) => string;
 }
+export { type ExtendedEtaConfig };
 export default EtaExtended;
