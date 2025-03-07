@@ -1,6 +1,7 @@
 # Custom Dictionary Words
 alpinejs
 Anson
+asciiquotes
 browserslistrc
 contenthash
 dbaeumer
@@ -8,6 +9,8 @@ devcontainers
 dprint
 evenodd
 filterpattern
+hiliteLength
+hiliteStart
 lightningcss
 linkify
 malva
@@ -16,6 +19,8 @@ popperjs
 Ralle
 smacss
 stylelintcache
+subsampling
 twbs
 Vitaliy
 vralle
+werror

@@ -112,7 +112,7 @@ function defaultLogger(vnuReport: VnuReport, files: string[]) {
   }
 
   if (errors.length + warnings.length + nonDocumentErrors.length === 0) {
-    console.log("\n", styleText("green", "Nu checker found no errors or warnings."), "\n");
+    console.log(styleText("green", ["", "Nu checker found no errors or warnings.", ""].join("\n")));
   }
 }
 
@@ -129,7 +129,7 @@ function validate(files: string[], options: Options = {}) {
     if (error) {
       console.error(styleText("red", "Java is missing. Nu validation stopped."));
       console.error(error);
-      return;
+      exit(1);
     }
 
     if (stderr === null) {
@@ -145,6 +145,7 @@ function validate(files: string[], options: Options = {}) {
 
     const version = versionMatched[1];
     const [majorVersion, minorVersion] = version.split(".").map(Number);
+
     if (majorVersion === undefined || minorVersion === undefined) {
       console.error(styleText("red", "Something went wrong. Can't determine installed Java version. Nu validation stopped."));
       exit(1);

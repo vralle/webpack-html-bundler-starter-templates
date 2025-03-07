@@ -66,7 +66,7 @@ function defaultLogger(vnuReport, files) {
         console.info(styleText("yellow", `Found ${infos.length} tip(s).`));
     }
     if (errors.length + warnings.length + nonDocumentErrors.length === 0) {
-        console.log("\n", styleText("green", "Nu checker found no errors or warnings."), "\n");
+        console.log(styleText("green", ["", "Nu checker found no errors or warnings.", ""].join("\n")));
     }
 }
 function validate(files, options = {}) {
@@ -80,7 +80,7 @@ function validate(files, options = {}) {
         if (error) {
             console.error(styleText("red", "Java is missing. Nu validation stopped."));
             console.error(error);
-            return;
+            exit(1);
         }
         if (stderr === null) {
             console.error(styleText("red", "Something went wrong. Java output is null. Nu validation stopped."));

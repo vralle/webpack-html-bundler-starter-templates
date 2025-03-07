@@ -2,13 +2,13 @@ import { Eta, type EtaConfig, EtaFileResolutionError } from "eta";
 import { default as MarkdownIt, type Options as MarkdownItOptions } from "markdown-it";
 import { readFileSync } from "node:fs";
 
-interface ExtendedEtaConfig extends Partial<EtaConfig> {
+interface EtaExtendedConfig extends Partial<EtaConfig> {
   markdownItConfig?: MarkdownItOptions;
 }
 
 class EtaExtended extends Eta {
   markdownIt: MarkdownIt;
-  constructor(config?: ExtendedEtaConfig) {
+  constructor(config?: EtaExtendedConfig) {
     const { markdownItConfig = {}, ...etaConfig } = config || {};
     super(etaConfig);
     this.markdownIt = new MarkdownIt("default", markdownItConfig);
@@ -35,5 +35,5 @@ class EtaExtended extends Eta {
   };
 }
 
-export { type ExtendedEtaConfig };
+export { type EtaExtendedConfig };
 export default EtaExtended;

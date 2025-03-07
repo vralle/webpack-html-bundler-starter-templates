@@ -122,6 +122,43 @@ eta.markdownIt.set({
 });
 ```
 
+## Limitations
+
+1. **Template Tags in Markdown**: When using Eta data in Markdown templates,
+   you must use `{{ }}` tags instead of the default `<% %>` tags. For example:
+
+   ```md
+   <!-- ❌ This won't work in .md files -->
+   # Hello <%= name %>
+
+   <!-- ✅ Use this instead -->
+   # Hello {{ name }}
+   ```
+
+   This limitation exists because Markdown-it escapes angle brackets (`<`, `>`),
+   which breaks the standard Eta tags. The double curly braces are preserved
+   during Markdown processing.
+
+2. **Layout Support**: Markdown templates cannot use layouts. For example:
+
+   ```md
+   <!-- ❌ This won't work -->
+   {{ layout("./layouts/main") }}
+   # Page Content
+
+   <!-- ✅ Instead, include the Markdown in an HTML template -->
+   <!-- In your HTML template: -->
+   {{ layout("./layouts/main") }}
+   <div>
+     {{~ include("./content.md") }}
+   </div>
+   ```
+
+   This limitation exists because Markdown-it processes the entire template
+   content as Markdown first, converting layout tags into HTML elements before
+   Eta can process them. To use layouts with Markdown content, include your
+   Markdown files within HTML templates that handle the layout.
+
 ## API Reference
 
 ### `EtaExtended`
@@ -131,7 +168,7 @@ The main class that extends Eta's functionality.
 #### Constructor Options
 
 ```typescript
-interface ExtendedEtaConfig extends Partial<EtaConfig> {
+interface EtaExtendedConfig extends Partial<EtaConfig> {
   markdownItConfig?: MarkdownItOptions;
 }
 ```

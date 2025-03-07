@@ -1,21 +1,30 @@
 {
   "name": "@vralle/eta-extended",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Extended Eta templating engine with support for loading and parsing Markdown template files.",
   "license": "MIT",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "engines": {
+    "node": ">=18.18.0"
+  },
   "scripts": {
     "build": "tsc --build",
     "format": "dprint check",
-    "lint:spelling": "cspell lint --show-context  \"**/*.{html,md}\""
+    "lint:spelling": "cspell lint --show-context  \"**/*.{html,md}\"",
+    "test": "jest",
+    "test:coverage": "jest --coverage"
   },
   "dependencies": {
     "eta": "^3.5.0",
     "markdown-it": "^14.1.0"
   },
   "devDependencies": {
-    "@types/markdown-it": "^14.1.2"
+    "@jest/globals": "^29.7.0",
+    "@types/jest": "^29.5.12",
+    "@types/markdown-it": "^14.1.2",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.2"
   }
 }
