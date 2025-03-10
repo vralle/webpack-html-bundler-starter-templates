@@ -61,7 +61,7 @@ describe("EtaExtended Unit Tests", () => {
       expect(result).toContain("<p>This is a test</p>");
     });
 
-    it("should return regular files", () => {
+    it("should read regular template", () => {
       const result = etaExtended.readFile(join(templateDir, "simple.eta"));
       expect(result).toContain("<h1>Title</h1>");
     });

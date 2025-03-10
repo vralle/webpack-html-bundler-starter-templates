@@ -1,8 +1,7 @@
-import { afterEach, beforeEach, describe, expect, jest, test } from "@jest/globals";
+import { afterEach, beforeEach, describe, expect, it, jest } from "@jest/globals";
 import { type ChildProcess, execFile, spawn } from "node:child_process";
 import validate, { defaultLogger, type VnuReport } from "../src/index";
 
-// Mock child_process
 jest.mock("node:child_process");
 
 describe("HTML Checker Tests", () => {
@@ -54,12 +53,7 @@ describe("HTML Checker Tests", () => {
   });
 
   describe("validate function", () => {
-    test("should exit with error when no files provided", () => {
-      expect(() => validate([])).toThrow("Process.exit called with code: 1");
-      expect(mockConsoleError).toHaveBeenCalledWith(expect.stringContaining("No files to check"));
-    });
-
-    test("should exit with error when Java is not available", () => {
+    it("should exit with error when Java is not available", () => {
       mockExecFile.mockImplementation((_cmd, _args, _opts, callback) => {
         if (callback) {
           callback(new Error("Java not found"), "", "");
@@ -71,14 +65,19 @@ describe("HTML Checker Tests", () => {
       expect(mockConsoleError).toHaveBeenCalledWith(expect.stringContaining("Java is missing"));
     });
 
-    test("should exit with error for unsupported Java version", () => {
+    it("should exit with error for unsupported Java version", () => {
       setupValidationTest("1.7.0_80");
 
       expect(() => validate(["test.html"])).toThrow("Process.exit called with code: 1");
       expect(mockConsoleError).toHaveBeenCalledWith(expect.stringContaining("Unsupported Java version"));
     });
 
-    test("should proceed with validation for valid Java version", () => {
+    it("should exit with error when no files provided", () => {
+      expect(() => validate([])).toThrow("Process.exit called with code: 1");
+      expect(mockConsoleError).toHaveBeenCalledWith(expect.stringContaining("No files to check"));
+    });
+
+    it("should proceed with validation for valid Java version", () => {
       setupValidationTest();
 
       validate(["test.html"]);
@@ -90,7 +89,7 @@ describe("HTML Checker Tests", () => {
   describe("defaultLogger", () => {
     const createMockReport = (messages: VnuReport["messages"]): VnuReport => ({ messages });
 
-    test("should log all message types correctly", () => {
+    it("should log all message types correctly", () => {
       const mockVnuReport = createMockReport([
         {
           type: "error",
@@ -123,7 +122,7 @@ describe("HTML Checker Tests", () => {
       expect(mockConsoleInfo).toHaveBeenCalledWith(expect.stringContaining("Found 1 warning(s)"));
     });
 
-    test("should handle empty messages", () => {
+    it("should handle empty messages", () => {
       defaultLogger(createMockReport([]), ["test.html"]);
       expect(mockConsoleError).not.toHaveBeenCalled();
       expect(mockConsoleLog).toHaveBeenCalledWith(
@@ -133,7 +132,7 @@ describe("HTML Checker Tests", () => {
   });
 
   describe("validate with custom options", () => {
-    test("should use custom logger when provided", () => {
+    it("should use custom logger when provided", () => {
       const customLogger = jest.fn();
       setupValidationTest();
 
@@ -141,7 +140,7 @@ describe("HTML Checker Tests", () => {
       expect(mockSpawn).toHaveBeenCalled();
     });
 
-    test("should use custom ignores when provided", () => {
+    it("should use custom ignores when provided", () => {
       const customIgnores = ["custom-ignore-pattern"];
       setupValidationTest();
 

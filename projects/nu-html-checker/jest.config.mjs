@@ -5,6 +5,7 @@ const jestConfig = {
   ...createJsWithTsEsmPreset(),
   displayName: "nu-html-checker",
   extensionsToTreatAsEsm: [".ts"],
+  moduleFileExtensions: ["ts", "mjs", "js"],
   testEnvironment: "node",
   testMatch: ["**/tests/**/*.test.ts"],
 };
