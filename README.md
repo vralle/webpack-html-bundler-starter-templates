@@ -42,7 +42,7 @@ This repository is optimized for development in containers:
 
 **Prerequisites:**
 
-- Node.js >= 18.18.0
+- Node.js >= v20.12.0
 - Java Runtime Environment (JRE) >= 8 (Optional, required for HTML validation)
 
 **Steps:**

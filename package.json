@@ -5,7 +5,7 @@
     "projects/*"
   ],
   "engines": {
-    "node": ">=18.18.0"
+    "node": ">=v20.12.0"
   },
   "scripts": {
     "build": "npm run build --workspaces --if-present",

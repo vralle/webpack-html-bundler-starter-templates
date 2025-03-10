@@ -12,7 +12,7 @@ that validates HTML files against W3C standards.
 
 ## Prerequisites
 
-- Node.js >= 18.18.0
+- Node.js >= v20.12.0
 - Java Runtime Environment (JRE) >= 8
 
 ## Usage

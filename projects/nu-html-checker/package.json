@@ -1,13 +1,13 @@
 {
   "name": "@vralle/nu-html-checker",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Lint HTML, CSS, and SVG with vnu-jar",
   "license": "MIT",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "engines": {
-    "node": ">=18.18.0"
+    "node": ">=v20.12.0"
   },
   "scripts": {
     "build": "tsc --build",
