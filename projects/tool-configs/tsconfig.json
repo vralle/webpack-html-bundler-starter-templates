@@ -7,9 +7,12 @@
     // Language and Environment
     "lib": ["es2023"],
     "target": "es2022",
+    // Completeness
+    "skipLibCheck": true,
     // Emit
     "declaration": true,
     "noEmit": false,
     "outDir": "dist"
-  }
+  },
+  "include": ["src/**/*"]
 }
