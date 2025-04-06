@@ -36,7 +36,7 @@
     "postcss-loader": "^8.1.1",
     "sass-embedded": "^1.85.0",
     "sass-loader": "^16.0.5",
-    "sharp": "^0.33.5",
+    "sharp": "^0.34.0",
     "stylelint-config-twbs-bootstrap": "^16.0.0",
     "terser-webpack-plugin": "^5.3.14",
     "webpack": "^5.98.0",
