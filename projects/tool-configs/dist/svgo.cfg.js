@@ -5,30 +5,26 @@
 const svgoConfig = {
     multipass: true,
     plugins: [
-        "removeDimensions",
         {
-            name: "cleanupNumericValues",
+            name: "cleanupListOfValues",
             params: {
-                floatPrecision: 3,
+                floatPrecision: 0,
                 leadingZero: true,
                 defaultPx: true,
                 convertToPx: true,
             },
         },
+        "removeDimensions",
+        "removeHiddenElems",
+        "removeOffCanvasPaths",
+        "removeScriptElement",
+        "reusePaths",
         {
             name: "preset-default",
             params: {
                 overrides: {
-                    removeUnknownsAndDefaults: {
-                        unknownContent: true,
-                        unknownAttrs: true,
-                        defaultAttrs: true,
-                        uselessOverrides: true,
-                        keepDataAttrs: true,
-                        keepAriaAttrs: true,
-                        keepRoleAttr: true,
-                    },
                     removeViewBox: false,
+                    inlineStyles: false, // @bug https://github.com/svg/svgo/issues/1834
                 },
             },
         },
