@@ -258,14 +258,20 @@ const webpackConfig = {
   },
   devtool: isProduction() ? false : "inline-cheap-source-map",
   devServer: {
-    static: {
-      directory: projectOutputPath,
+    static: false,
+    hot: false,
+    liveReload: true,
+    watchFiles: {
+      paths: ["src/**/*"],
+      options: {
+        usePolling: false,
+        awaitWriteFinish: true,
+      },
     },
-    watchFiles: ["src/**/*.{html,scss,svg}", "dist/**/*"],
   },
   watchOptions: {
-    poll: true,
-    ignored: ["node_modules/**"],
+    poll: false,
+    ignored: ["node_modules/**", "dist/**"],
   },
 };
 

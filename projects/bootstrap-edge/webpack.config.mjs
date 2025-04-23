@@ -223,7 +223,6 @@ const webpackConfig = {
     minimizer: [
       new HtmlMinimizerPlugin({
         minify: HtmlMinimizerPlugin.swcMinify,
-        // @ts-expect-error: Type error
         minimizerOptions: swcHtmlConfig,
       }),
       new SwcMinifyWebpackPlugin(),
@@ -234,7 +233,7 @@ const webpackConfig = {
          * @type {Omit<import("lightningcss").TransformOptions<import("lightningcss").CustomAtRules>, "code"|"filename">}
          */
         minimizerOptions: {
-          // @ts-expect-error: Type error
+          // @ts-expect-error: @bug https://github.com/webpack-contrib/html-minimizer-webpack-plugin/issues/148#issuecomment-2783824534
           targets: browserslistToTargets(browsersData),
         },
       }),
@@ -266,14 +265,20 @@ const webpackConfig = {
   },
   devtool: isProduction() ? false : "inline-cheap-source-map",
   devServer: {
-    static: {
-      directory: projectOutputPath,
+    static: false,
+    hot: false,
+    liveReload: true,
+    watchFiles: {
+      paths: ["src/**/*"],
+      options: {
+        usePolling: false,
+        awaitWriteFinish: true,
+      },
     },
-    watchFiles: ["src/**/*.{html,css,svg}", "dist/**/*"],
   },
   watchOptions: {
-    poll: true,
-    ignored: ["node_modules/**"],
+    poll: false,
+    ignored: ["node_modules/**", "dist/**"],
   },
 };
 
