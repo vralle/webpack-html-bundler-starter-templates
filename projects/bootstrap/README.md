@@ -16,8 +16,8 @@ Bootstrap v5 with optimized build tools and comprehensive validation.
 
 ```bash
 npm run start        # Development server
-npm run build        # Production build (relative URLs)
-npm run build:public # Production build with public URL
+npm run staging      # Production build (using relative URLs)
+npm run build        # Production build (using public URL)
 ```
 
 ### Linting and Validation

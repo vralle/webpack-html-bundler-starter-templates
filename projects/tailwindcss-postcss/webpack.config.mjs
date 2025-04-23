@@ -5,7 +5,6 @@
 import { Buffer } from "node:buffer";
 import { join, parse, relative } from "node:path";
 import { env } from "node:process";
-import { URL } from "node:url";
 import sharp from "sharp";
 
 // Plugins
@@ -33,9 +32,11 @@ const projectSrcPath = projectPaths.src;
 const projectOutputPath = projectPaths.output;
 const outputJsDir = join(projectPaths.outputAssetDir, "js");
 const outputCssDir = join(projectPaths.outputAssetDir, "css");
-const isProduction = () => env["NODE_ENV"] === "production";
-const PUBLIC_URL = env["PUBLIC_URL"] === undefined ? env["PUBLIC_URL"] : (new URL("/", env["PUBLIC_URL"])).href;
+const isProduction = env["NODE_ENV"] === "production";
+const isStaging = env["NODE_ENV"] === "staging";
+const isDevelopment = env["NODE_ENV"] === "development";
 const imgRegExp = /\.(?:avif|gif|heif|ico|jp[2x]|j2[kc]|jpe?g|jpe|jxl|png|raw|svg|tiff?|webp)/i;
+const fontRegExp = /\.(?:ttf|woff2?)/i;
 
 // Leave browserslist args empty to load .browserslistrc or set options directly
 const browsersData = browserslist();
@@ -44,15 +45,15 @@ const browsersData = browserslist();
  * @type {WebpackConfig & DevServerConfig}
  */
 const webpackConfig = {
-  mode: isProduction() ? "production" : "development",
+  mode: isProduction || isStaging ? "production" : "development",
   output: {
-    publicPath: PUBLIC_URL || "auto",
+    publicPath: isProduction ? "https://example.site/" : isDevelopment ? "/" : "auto",
     path: projectOutputPath,
     clean: true,
     crossOriginLoading: "anonymous",
     hashDigestLength: 9,
     filename: join(outputJsDir, "[name].[contenthash].js"),
-    chunkFilename: join(outputJsDir, isProduction() ? "[id].[contenthash].js" : "[name].[contenthash].js"),
+    chunkFilename: join(outputJsDir, isProduction || isStaging ? "[id].[contenthash].js" : "[name].[contenthash].js"),
     cssFilename: join(outputCssDir, "[name].[contenthash].css"),
     assetModuleFilename: ({ filename }) => {
       const outputFilename = "[name][ext]";
@@ -70,9 +71,17 @@ const webpackConfig = {
       const pathParts = parse(relPath);
       // Caution: Control source file names to avoid file name collisions.
       const dirPart = pathParts.dir.toLowerCase();
+
+      if (isProduction || isStaging) {
+        if (fontRegExp.test(pathParts.ext)) {
+          return join(projectPaths.outputAssetDir, dirPart, "[contenthash][ext]");
+        }
+      }
+
       const namePart = pathParts.name.toLowerCase();
-      if (/\.(?:ttf|woff2?)/i.test(pathParts.ext)) {
-        return join(projectPaths.outputAssetDir, dirPart, isProduction() ? "[contenthash][ext]" : `${namePart}.[contenthash][ext]`);
+
+      if (fontRegExp.test(pathParts.ext)) {
+        return join(projectPaths.outputAssetDir, dirPart, `${namePart}.[contenthash][ext]`);
       }
 
       return join(projectPaths.outputAssetDir, dirPart, `${namePart}[ext]`);
@@ -104,13 +113,15 @@ const webpackConfig = {
             loader: "css-loader",
             /** @see https://github.com/webpack-contrib/css-loader */
             options: {
-              importLoaders: 1,
+              sourceMap: !isProduction,
+              importLoaders: 0,
             },
           },
           {
             loader: "postcss-loader",
             /** @see https://github.com/webpack-contrib/postcss-loader */
             options: {
+              sourceMap: !isProduction,
               postcssOptions: {
                 plugins: {
                   "@tailwindcss/postcss": {},
@@ -241,7 +252,7 @@ const webpackConfig = {
       }),
     ],
   },
-  devtool: isProduction() ? false : "inline-cheap-source-map",
+  devtool: isProduction ? false : "inline-cheap-source-map",
   devServer: {
     static: false,
     hot: false,
@@ -249,13 +260,13 @@ const webpackConfig = {
     watchFiles: {
       paths: ["src/**/*"],
       options: {
-        usePolling: false,
+        usePolling: true,
         awaitWriteFinish: true,
       },
     },
   },
   watchOptions: {
-    poll: false,
+    poll: true,
     ignored: ["node_modules/**", "dist/**"],
   },
 };

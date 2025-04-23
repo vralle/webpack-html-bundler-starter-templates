@@ -14,7 +14,7 @@ and advanced build tooling.
 
 ## Project Structure
 
-```console
+```text
 ├── bootstrap/           # Bootstrap 5 template with classic tools
 ├── bootstrap-edge/      # Bootstrap 5 template with cutting-edge tools
 ├── tailwindcss-postcss/ # TailwindCSS + Alpine.js template
@@ -79,8 +79,8 @@ Template using TailwindCSS and Alpine.js:
 
 ```bash
 npm run start         # Development server
-npm run build         # Production build + HTML validation
-npm run build:public  # Production build with public URL
+npm run staging       # Production build (using relative URLs)
+npm run build         # Production build (using public URL)
 npm run format        # Lint files with dprint formatter
 npm run lint:js       # Lint JavaScript/TypeScript files with EsLint
 npm run lint:styles   # Lint SCSS/CSS/HTML files with Stylelint
