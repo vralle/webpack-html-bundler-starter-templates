@@ -3,17 +3,20 @@
  * @see https://github.com/swc-project/swc/blob/main/packages/html/index.ts
  */
 const swcHtmlConfig = {
-    minifyJson: true,
-    minifyJs: true,
-    minifyCss: true,
-    collapseWhitespaces: "smart",
-    removeComments: true,
-    removeRedundantAttributes: "smart",
     collapseBooleanAttributes: true,
+    collapseWhitespaces: "smart",
+    minifyCss: true,
+    minifyJs: false,
+    minifyJson: true,
     normalizeAttributes: true,
-    sortSpaceSeparatedAttributeValues: false,
-    sortAttributes: true,
     quotes: true,
+    removeComments: true,
+    removeEmptyAttributes: true,
+    removeEmptyMetadataElements: true,
+    removeRedundantAttributes: "smart",
+    selfClosingVoidElements: true,
+    sortAttributes: true,
+    sortSpaceSeparatedAttributeValues: false,
     // tagOmission can cause unexpected results.
     tagOmission: false,
 };

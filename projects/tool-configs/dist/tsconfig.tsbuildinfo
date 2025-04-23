@@ -1,1 +1,1 @@
-{"root":["../src/cleanCss.cfg.ts","../src/htmlTerser.cfg.ts","../src/index.ts","../src/postcss.cfg.ts","../src/sharp.cfg.ts","../src/svgo.cfg.ts","../src/swcHtml.cfg.ts","../src/terser.cfg.ts"],"version":"5.8.2"}
+{"root":["../src/cleanCss.cfg.ts","../src/htmlTerser.cfg.ts","../src/index.ts","../src/postcss.cfg.ts","../src/sharp.cfg.ts","../src/svgo.cfg.ts","../src/swcHtml.cfg.ts","../src/terser.cfg.ts"],"version":"5.8.3"}
