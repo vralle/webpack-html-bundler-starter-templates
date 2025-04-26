@@ -133,7 +133,7 @@ const webpackConfig = {
                */
               sassOptions: {
                 loadPaths: ["node_modules", "../../node_modules"],
-                style: isDevelopment ? "expanded" : "compressed",
+                style: "expanded",
                 quietDeps: true,
                 silenceDeprecations: ["import"],
               },
@@ -274,7 +274,7 @@ const webpackConfig = {
       }),
     ],
   },
-  devtool: isProduction ? false : "inline-cheap-source-map",
+  devtool: isProduction ? false : isDevelopment ? "inline-cheap-source-map" : "source-map",
   devServer: {
     static: false,
     hot: false,
