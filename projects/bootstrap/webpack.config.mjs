@@ -276,7 +276,7 @@ const webpackConfig = {
     watchFiles: {
       paths: ["src/**/*"],
       options: {
-        usePolling: true,
+        usePolling: false,
         awaitWriteFinish: true,
       },
     },
