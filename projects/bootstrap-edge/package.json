@@ -32,7 +32,7 @@
     "lightningcss": "^1.29.2",
     "markdownlint-cli2": "^0.17.2",
     "mini-svg-data-uri": "^1.4.4",
-    "npm-run-all2": "^7.0.2",
+    "npm-run-all2": "^8.0.1",
     "sass-embedded": "^1.85.0",
     "sass-loader": "^16.0.5",
     "sharp": "^0.34.0",
