@@ -21,15 +21,15 @@
     "singleLineBlockThreshold": null
   },
   "typescript": {
-    "lineWidth": 180,
+    "lineWidth": 120,
     "quoteProps": "asNeeded",
     "quoteStyle": "preferDouble",
-    "semiColons": "always"
+    "semiColons": "prefer"
   },
   "plugins": [
     "https://plugins.dprint.dev/typescript-0.95.0.wasm",
     "https://plugins.dprint.dev/json-0.20.0.wasm",
-    "https://plugins.dprint.dev/g-plane/malva-v0.11.2.wasm"
+    "https://plugins.dprint.dev/g-plane/malva-v0.12.0.wasm"
   ],
   "excludes": [
     "**/.git/**",
