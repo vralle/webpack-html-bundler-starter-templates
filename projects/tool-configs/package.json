@@ -12,8 +12,8 @@
     "lint:js": "eslint --fix-dry-run --cache --cache-location .cache/.eslintcache ."
   },
   "devDependencies": {
-    "@types/clean-css": "^4.2.11",
-    "@types/html-minifier-terser": "^7.0.2",
-    "postcss-load-config": "^6.0.1"
+    "@types/clean-css": "^4.2",
+    "@types/html-minifier-terser": "^7.0",
+    "postcss-load-config": "^6.0"
   }
 }
