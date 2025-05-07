@@ -1,10 +1,9 @@
 {
   "recommendations": [
-    "streetsidesoftware.code-spell-checker",
-    "ms-azuretools.vscode-docker",
     "ms-vscode-remote.remote-containers",
-    "DavidAnson.vscode-markdownlint",
+    "streetsidesoftware.code-spell-checker",
     "dprint.dprint",
-    "stylelint.vscode-stylelint"
+    "stylelint.vscode-stylelint",
+    "DavidAnson.vscode-markdownlint"
   ]
 }
