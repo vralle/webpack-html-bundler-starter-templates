@@ -70,7 +70,12 @@ function defaultLogger(vnuReport: VnuReport, files: string[]) {
   const warnings = vnuReport.messages.filter((message) => message.type === "info" && message.subType === "warning");
   const infos = vnuReport.messages.filter((message) => message.type === "info" && message.subType !== "warning");
   const nonDocumentErrors = vnuReport.messages.filter((message) => message.type === "non-document-error");
-  const colors: Record<string, "red" | "yellow" | "white"> = { error: "red", "non-document-error": "red", warning: "yellow", info: "white" };
+  const colors: Record<string, "red" | "yellow" | "white"> = {
+    error: "red",
+    "non-document-error": "red",
+    warning: "yellow",
+    info: "white",
+  };
   for (const message of vnuReport.messages) {
     const type = message.type === "info" && message.subType === "warning" ? message.subType : message.type;
     const output = [];
@@ -96,7 +101,9 @@ function defaultLogger(vnuReport: VnuReport, files: string[]) {
   console.info(styleText("blue", `Checked ${files.length} file(s)`));
 
   if (nonDocumentErrors.length) {
-    console.info(styleText("red", `${nonDocumentErrors.length} document(s) being validated could not be examined to the end.`));
+    console.info(
+      styleText("red", `${nonDocumentErrors.length} document(s) being validated could not be examined to the end.`),
+    );
   }
 
   if (errors.length) {
@@ -147,12 +154,19 @@ function validate(files: string[], options: Options = {}) {
     const [majorVersion, minorVersion] = version.split(".").map(Number);
 
     if (majorVersion === undefined || minorVersion === undefined) {
-      console.error(styleText("red", "Something went wrong. Can't determine installed Java version. Nu validation stopped."));
+      console.error(
+        styleText("red", "Something went wrong. Can't determine installed Java version. Nu validation stopped."),
+      );
       exit(1);
     }
 
     if ((majorVersion !== 1 && majorVersion < 8) || (majorVersion === 1 && minorVersion < 8)) {
-      console.error(styleText("red", `\nUnsupported Java version used: ${version}. Java 8 environment or up is required. Nu validation stopped.`));
+      console.error(
+        styleText(
+          "red",
+          `\nUnsupported Java version used: ${version}. Java 8 environment or up is required. Nu validation stopped.`,
+        ),
+      );
       exit(1);
     }
 

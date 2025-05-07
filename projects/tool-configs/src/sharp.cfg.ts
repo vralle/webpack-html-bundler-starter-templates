@@ -1,4 +1,15 @@
-import type { AvifOptions, GifOptions, HeifOptions, Jp2Options, JpegOptions, JxlOptions, PngOptions, RawOptions, TiffOptions, WebpOptions } from "sharp";
+import type {
+  AvifOptions,
+  GifOptions,
+  HeifOptions,
+  Jp2Options,
+  JpegOptions,
+  JxlOptions,
+  PngOptions,
+  RawOptions,
+  TiffOptions,
+  WebpOptions,
+} from "sharp";
 
 interface SharpEncodeOptions {
   avif?: AvifOptions;
