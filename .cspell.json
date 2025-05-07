@@ -11,7 +11,7 @@
     {
       "name": "custom-words",
       "description": "Additional dictionary",
-      "path": "./.cspell/custom-words.txt"
+      "path": "./.cspell/dictionary.txt"
     }
   ],
   "useGitignore": true,
