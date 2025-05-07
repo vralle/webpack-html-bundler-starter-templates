@@ -1,11 +1,12 @@
 {
   "extends": "../../tsconfig",
   "compilerOptions": {
-    "baseUrl": ".",
     "paths": {
       "@src/*": [
         "./src/*"
       ]
-    }
+    },
+    "skipLibCheck": true,
+    "isolatedModules": true
   }
 }

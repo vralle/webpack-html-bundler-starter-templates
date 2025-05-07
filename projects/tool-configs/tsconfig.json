@@ -1,18 +1,17 @@
 {
-  "extends": "../../tsconfig",
   "compilerOptions": {
-    // Modules
-    "module": "node16",
-    "moduleResolution": "node16",
-    // Language and Environment
-    "lib": ["es2023"],
-    "target": "es2022",
-    // Completeness
-    "skipLibCheck": true,
-    // Emit
-    "declaration": true,
-    "noEmit": false,
-    "outDir": "dist"
+    "target": "ES2022",
+    "module": "ES2022",
+    "moduleResolution": "bundler",
+    "lib": ["ES2022"],
+    "types": ["clean-css", "html-minifier-terser", "postcss-load-config", "sharp", "svgo", "@swc/html", "terser"],
+    "esModuleInterop": true,
+    "strict": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "declaration": true
   },
-  "include": ["src/**/*"]
+  "files": [
+    "./src/index.ts"
+  ]
 }

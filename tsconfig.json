@@ -1,40 +1,36 @@
 {
+  "display": "workspaces",
   "compilerOptions": {
     // Type Checking
-    "allowUnreachableCode": false,
-    "allowUnusedLabels": false,
     "exactOptionalPropertyTypes": true,
     "noFallthroughCasesInSwitch": true,
-    "noImplicitAny": true,
     "noImplicitOverride": true,
     "noImplicitReturns": true,
-    "noImplicitThis": true,
     "noPropertyAccessFromIndexSignature": true,
     "noUncheckedIndexedAccess": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "strict": true,
-    "strictBindCallApply": true,
-    "strictFunctionTypes": true,
-    "strictNullChecks": true,
-    "strictPropertyInitialization": true,
-    "useUnknownInCatchVariables": true,
     // Modules
-    "module": "ES2020",
     "allowArbitraryExtensions": true,
+    "allowImportingTsExtensions": true,
+    "allowUmdGlobalAccess": true,
+    "module": "ESNext",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
-    // Interop Constraints
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "isolatedModules": true,
     // Emit
     "noEmit": true,
+    "importHelpers": true,
     // JavaScript Support
+    "checkJs": true,
     "allowJs": true,
-    "checkJs": true
+    // Interop Constraints
+    "esModuleInterop": true,
+    // Language and Environment
+    "target": "ES2022"
   },
-  "typeAcquisition": {
-    "enable": true
-  }
+  "exclude": [
+    "node_modules",
+    "**/node_modules/*"
+  ]
 }

@@ -1,14 +1,18 @@
 {
   "compilerOptions": {
-    "lib": ["es2023"],
-    "module": "node16",
-    "target": "es2022",
-    "strict": true,
+    "target": "ES2022",
+    "module": "ES2022",
+    "moduleResolution": "bundler",
+    "lib": ["ES2022"],
+    "types": ["node", "vnu-jar"],
+    "isolatedModules": true,
     "esModuleInterop": true,
-    "skipLibCheck": true,
-    "moduleResolution": "node16",
-    "outDir": "dist",
+    "strict": true,
+    "rootDir": "./src",
+    "outDir": "./dist",
     "declaration": true
   },
-  "files": ["src/index.ts"]
+  "files": [
+    "./src/index.ts"
+  ]
 }
