@@ -11,6 +11,3 @@ trim_trailing_whitespace = true
 [Dockerfile]
 indent_size = 4
 insert_final_newline = false
-
-[*.{html,md}]
-indent_size = 4

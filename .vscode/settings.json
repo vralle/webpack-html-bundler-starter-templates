@@ -13,7 +13,7 @@
     "files.trimFinalNewlines": true
   },
   "[html]": {
-    "editor.tabSize": 4
+    "editor.tabSize": 2
   },
   "[javascript]": {
     "editor.defaultFormatter": "dprint.dprint"
@@ -26,7 +26,7 @@
   },
   "[markdown]": {
     "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
-    "editor.tabSize": 4
+    "editor.tabSize": 2
   },
   "[scss]": {
     // Stylelint can't be a formatter
