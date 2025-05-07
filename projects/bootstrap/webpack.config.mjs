@@ -268,7 +268,7 @@ const webpackConfig = {
       }),
     ],
   },
-  devtool: isProduction ? false : isDevelopment ? "inline-cheap-source-map" : "source-map",
+  devtool: false, // Terser crashes with source map.
   devServer: {
     static: false,
     hot: false,

@@ -252,7 +252,7 @@ const webpackConfig = {
       }),
     ],
   },
-  devtool: isProduction ? false : isDevelopment ? "inline-cheap-source-map" : "source-map",
+  devtool: isProduction ? false : "source-map",
   devServer: {
     static: false,
     hot: false,
