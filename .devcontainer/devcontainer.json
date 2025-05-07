@@ -1,31 +1,25 @@
 {
-  "name": "Node.js workspace: HTML starter templates",
+  "name": "HTML starter templates",
   "build": {
-    "dockerfile": "../Dockerfile",
-    "context": ".."
+    "dockerfile": "./Dockerfile",
+    "context": "../"
   },
-  "remoteUser": "node", // More info: https://aka.ms/dev-containers-non-root
-  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+  "workspaceMount": "source=${localWorkspaceFolder},target=${containerWorkspaceFolder},type=bind,consistency=cached",
   "mounts": [
     "source=${localWorkspaceFolderBasename}-node_modules,target=${containerWorkspaceFolder}/node_modules,type=volume"
   ],
-  "workspaceFolder": "/workspace",
-  "updateContentCommand": {
-    "Update ownership of files in the workspace dir": "sudo chown -R node /workspace",
-    "Update access permissions of files in the workspace dir": "sudo chmod -R 1777 /workspace",
-    "Update global packages": "sudo npm update -g && npm cache clean --force > /dev/null 2>&1"
-  },
-  "postCreateCommand": "npm install",
+  "workspaceFolder": "/workspaces",
+  "remoteUser": "node", // More info: https://aka.ms/dev-containers-non-root
+  // 1. Changes the group ownership of all files to the current user's group.
+  // 2. Sets the Setgid bit on directories to ensure new files inherit group ownership.
+  "updateContentCommand": "sudo chgrp -R $(id -gn) /workspaces && sudo find /workspaces -type d -exec chmod g+sw {} +",
+  "postCreateCommand": "npm i && npx dprint config update",
   "customizations": {
     "vscode": {
       "extensions": [
-        "DavidAnson.vscode-markdownlint",
-        "dbaeumer.vscode-eslint",
-        "dprint.dprint",
-        "ms-azuretools.vscode-docker",
-        "ms-vscode.live-server",
         "streetsidesoftware.code-spell-checker",
-        "stylelint.vscode-stylelint"
+        "dprint.dprint",
+        "dbaeumer.vscode-eslint"
       ]
     }
   }
