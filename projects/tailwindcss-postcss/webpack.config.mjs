@@ -216,6 +216,7 @@ const webpackConfig = {
         ],
       },
       minify: false,
+      verbose: env["NODE_ENV"] === "test" ? false : "auto",
     }),
   ],
   optimization: {

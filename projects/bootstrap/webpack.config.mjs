@@ -230,7 +230,7 @@ const webpackConfig = {
       },
       minify: isProduction || isStaging,
       minifyOptions: htmlTerserConfig,
-      verbose: "auto",
+      verbose: env["NODE_ENV"] === "test" ? false : "auto",
     }),
   ],
   optimization: {
