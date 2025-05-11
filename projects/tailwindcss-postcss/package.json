@@ -28,7 +28,7 @@
     "html-bundler-webpack-plugin": "^4.20",
     "html-minimizer-webpack-plugin": "^5.0",
     "image-minimizer-webpack-plugin": "^4.1",
-    "markdownlint-cli2": "^0.17",
+    "markdownlint-cli2": "^0.18",
     "mini-svg-data-uri": "^1.4",
     "npm-run-all2": "^8.0",
     "postcss": "^8.5",
