@@ -1,6 +1,7 @@
+import ShortUniqueId from "short-unique-id";
 import type { Config } from "svgo";
 
-let prefixCounter = 0;
+const { randomUUID } = new ShortUniqueId({ length: 3 });
 
 /**
  * SVGO options
@@ -23,7 +24,7 @@ const svgoConfig: Config = {
         delim: "__",
         prefixIds: true,
         prefixClassNames: true,
-        prefix: () => `${prefixCounter++}`,
+        prefix: () => randomUUID(),
       },
     },
     "removeDimensions",
