@@ -1,3 +1,4 @@
+let prefixCounter = 0;
 /**
  * SVGO options
  * @see https://github.com/svg/svgo
@@ -8,14 +9,21 @@ const svgoConfig = {
         {
             name: "cleanupListOfValues",
             params: {
-                floatPrecision: 0,
                 leadingZero: true,
                 defaultPx: true,
                 convertToPx: true,
             },
         },
+        {
+            name: "prefixIds",
+            params: {
+                delim: "__",
+                prefixIds: true,
+                prefixClassNames: true,
+                prefix: () => `${prefixCounter++}`,
+            },
+        },
         "removeDimensions",
-        "removeHiddenElems",
         "removeOffCanvasPaths",
         "removeScriptElement",
         "reusePaths",
@@ -25,6 +33,9 @@ const svgoConfig = {
                 overrides: {
                     removeViewBox: false,
                     inlineStyles: false, // @bug https://github.com/svg/svgo/issues/1834
+                    cleanupIds: {
+                        minify: false,
+                    },
                 },
             },
         },
