@@ -30,7 +30,6 @@ const svgoConfig: Config = {
     "removeDimensions",
     "removeOffCanvasPaths",
     "removeScriptElement",
-    "reusePaths",
     {
       name: "preset-default",
       params: {
