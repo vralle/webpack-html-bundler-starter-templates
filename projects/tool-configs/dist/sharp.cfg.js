@@ -3,21 +3,28 @@
  * @see https://sharp.pixelplumbing.com/api-output
  */
 const sharpEncodeOptions = {
+    avif: {
+        effort: 9,
+    },
     jpeg: {
-        quality: 60,
-        chromaSubsampling: "4:2:0",
+        // @ts-expect-error: effort is a valid parameter for JPEG encoding in Sharp.js/libvips but not reflected in TypeScript types.
+        effort: 10,
+        mozjpeg: true,
+    },
+    heif: {
+        effort: 9,
     },
     png: {
-        compressionLevel: 9,
-        palette: true,
         adaptiveFiltering: true,
+        compressionLevel: 9,
+        effort: 10,
+        palette: true,
         quality: 92,
     },
     webp: {
-        quality: 60, // default 80
-        alphaQuality: 100,
-        smartSubsample: true,
+        effort: 6,
         preset: "photo", // one of: default, photo, picture, drawing, icon, text
+        smartSubsample: true,
     },
 };
 export default sharpEncodeOptions;

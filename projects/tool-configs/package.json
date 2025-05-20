@@ -1,6 +1,6 @@
 {
   "name": "@vralle/tool-configs",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Shareable tool configurations",
   "private": true,
   "type": "module",
