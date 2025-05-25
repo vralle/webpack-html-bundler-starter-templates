@@ -24,7 +24,7 @@
     "@stylistic/eslint-plugin": "^4.2.0",
     "@vitest/eslint-plugin": "^1.1.44",
     "cspell": "^9.0",
-    "dprint": "^0.49",
+    "dprint": "^0.50",
     "eslint": "^9.26",
     "eslint-plugin-jsdoc": "^50.6.11",
     "globals": "^16.0",
