@@ -11,11 +11,12 @@ const svgoConfig: Config = {
   multipass: true,
   plugins: [
     {
-      name: "cleanupListOfValues",
+      name: "preset-default",
       params: {
-        leadingZero: true,
-        defaultPx: true,
-        convertToPx: true,
+        overrides: {
+          removeViewBox: false,
+          inlineStyles: false, // @bug https://github.com/svg/svgo/issues/1834,
+        },
       },
     },
     {
@@ -25,21 +26,6 @@ const svgoConfig: Config = {
         prefixIds: true,
         prefixClassNames: true,
         prefix: () => randomUUID(),
-      },
-    },
-    "removeDimensions",
-    "removeOffCanvasPaths",
-    "removeScriptElement",
-    {
-      name: "preset-default",
-      params: {
-        overrides: {
-          removeViewBox: false,
-          inlineStyles: false, // @bug https://github.com/svg/svgo/issues/1834
-          cleanupIds: {
-            minify: false,
-          },
-        },
       },
     },
   ],

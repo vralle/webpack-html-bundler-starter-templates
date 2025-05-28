@@ -41,7 +41,6 @@ const sharpEncodeOptions: SharpEncodeOptions = {
     effort: 9,
   },
   png: {
-    adaptiveFiltering: true,
     compressionLevel: 9,
     effort: 10,
     palette: true,
@@ -49,8 +48,7 @@ const sharpEncodeOptions: SharpEncodeOptions = {
   },
   webp: {
     effort: 6,
-    preset: "photo", // one of: default, photo, picture, drawing, icon, text
-    smartSubsample: true,
+    preset: "default", // one of: default, photo, picture, drawing, icon, text
   },
 };
 
