@@ -26,7 +26,7 @@
     "cspell": "^9.0",
     "dprint": "^0.50",
     "eslint": "^9.26",
-    "eslint-plugin-jsdoc": "^50.6.11",
+    "eslint-plugin-jsdoc": "^51.0.1",
     "globals": "^16.0",
     "malva": "^0.12",
     "markdownlint-cli2": "^0.18",
