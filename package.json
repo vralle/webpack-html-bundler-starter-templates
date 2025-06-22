@@ -17,7 +17,7 @@
     "test": "vitest run --pool=forks --testTimeout 10000"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.9",
+    "@biomejs/biome": "^2.0",
     "@dprint/json": "^0.20",
     "@dprint/typescript": "^0.95",
     "@eslint/js": "^9.26",
