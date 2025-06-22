@@ -11,7 +11,6 @@ const svgoConfig = {
             name: "preset-default",
             params: {
                 overrides: {
-                    removeViewBox: false,
                     inlineStyles: false, // @bug https://github.com/svg/svgo/issues/1834,
                 },
             },
