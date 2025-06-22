@@ -11,9 +11,11 @@
   "workspaceFolder": "/workspaces",
   "remoteUser": "node", // More info: https://aka.ms/dev-containers-non-root
   // 1. Changes the group ownership of all files to the current user's group.
-  // 2. Sets the Setgid bit on directories to ensure new files inherit group ownership.
-  "updateContentCommand": "sudo chgrp -R $(id -gn) /workspaces && sudo find /workspaces -type d -exec chmod g+sw {} +",
+  // 2. Set group RW on files
+  // 3. Sets the Setgid bit on directories to ensure new files inherit group ownership.
+  "updateContentCommand": "sudo chgrp -R $(id -gn) /workspaces && sudo find /workspaces -type f -exec chmod g+rw {} + && sudo find /workspaces -type d -exec chmod u=rwx,g=rwxs,o=rx {} +",
   "postCreateCommand": "npm i && npx dprint config update",
+  "waitFor": "postCreateCommand",
   "customizations": {
     "vscode": {
       "extensions": [
