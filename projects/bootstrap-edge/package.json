@@ -38,7 +38,7 @@
     "sass-loader": "^16.0",
     "sharp": "^0.34",
     "stylelint-config-twbs-bootstrap": "^16.0",
-    "svgo": "^3.3",
+    "svgo": "^4.0",
     "swc-loader": "^0.2",
     "swc-minify-webpack-plugin": "^2.1",
     "vitest": "^3.1.3",
