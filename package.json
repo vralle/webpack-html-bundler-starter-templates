@@ -28,7 +28,7 @@
     "eslint": "^9.29",
     "eslint-plugin-jsdoc": "^51.1",
     "globals": "^16.2",
-    "malva": "^0.12",
+    "malva": "^0.13",
     "markdownlint-cli2": "^0.18",
     "postcss": "^8.5",
     "postcss-html": "^1.8",
