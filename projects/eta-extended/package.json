@@ -16,7 +16,7 @@
     "test": "vitest"
   },
   "dependencies": {
-    "eta": "^3.5",
+    "eta": "^4.0",
     "markdown-it": "^14.1"
   },
   "devDependencies": {
