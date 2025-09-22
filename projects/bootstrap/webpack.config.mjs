@@ -276,14 +276,20 @@ const webpackConfig = {
     watchFiles: {
       paths: ["src/**/*"],
       options: {
+        cwd: projectPaths.root,
         usePolling: false,
-        awaitWriteFinish: true,
+        alwaysStat: false,
+        ignorePermissionErrors: false,
+        ignoreInitial: true,
+        interval: 750,
+        binaryInterval: 1000,
+        atomic: 500,
       },
     },
   },
   watchOptions: {
     poll: true,
-    ignored: ["node_modules/**", "dist/**"],
+    ignored: ["**/.git", "**/node_modules", "**/dist"],
   },
 };
 
