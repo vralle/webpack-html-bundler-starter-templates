@@ -18,7 +18,6 @@ and advanced build tooling.
 ├── bootstrap/           # Bootstrap 5 template with classic tools
 ├── bootstrap-edge/      # Bootstrap 5 template with cutting-edge tools
 ├── tailwindcss-postcss/ # TailwindCSS + Alpine.js template
-├── eta-extended/        # Extended Eta template engine with Markdown support
 ├── nu-html-checker/     # HTML validation tool
 └── tool-configs/        # Shared tool configurations
 ```
@@ -90,14 +89,6 @@ npm run lint:spelling # Check spelling in HTML/Markdown files
 ```
 
 ## Utility Packages
-
-### `@vralle/eta-extended`
-
-Extended Eta template engine with Markdown support:
-
-- Seamless integration with Eta
-- Markdown file parsing with `markdown-it`
-- Configurable markdown options
 
 ### `@vralle/nu-html-checker`
 
