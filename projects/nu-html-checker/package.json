@@ -20,6 +20,6 @@
   },
   "devDependencies": {
     "@types/vnu-jar": "^17.11",
-    "vitest": "^3.2"
+    "vitest": "^4.0"
   }
 }
