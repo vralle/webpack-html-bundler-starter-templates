@@ -41,7 +41,7 @@
     "svgo": "^4.0",
     "swc-loader": "^0.2",
     "swc-minify-webpack-plugin": "^2.1",
-    "vitest": "^3.2",
+    "vitest": "^4.0",
     "webpack": "^5.99",
     "webpack-cli": "^6.0",
     "webpack-dev-server": "^5.2"
