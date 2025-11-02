@@ -16,7 +16,7 @@
     "test": "vitest"
   },
   "dependencies": {
-    "vnu-jar": "^24.10.17"
+    "vnu-jar": "^25.11.2"
   },
   "devDependencies": {
     "@types/vnu-jar": "^17.11",
