@@ -31,7 +31,7 @@
     "html-minimizer-webpack-plugin": "^5.0",
     "image-minimizer-webpack-plugin": "^4.1",
     "lightningcss": "^1.30",
-    "markdownlint-cli2": "^0.18",
+    "markdownlint-cli2": "^0.19",
     "mini-svg-data-uri": "^1.4",
     "npm-run-all2": "^8.0",
     "sass-embedded": "^1.89",
