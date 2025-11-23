@@ -24,7 +24,7 @@
     "@vralle/tool-configs": "^0.3",
     "browserslist": "^4.25",
     "css-loader": "^7.1",
-    "glob": "^11.0",
+    "glob": "^13.0",
     "html-bundler-webpack-plugin": "^4.20",
     "html-minimizer-webpack-plugin": "^5.0",
     "image-minimizer-webpack-plugin": "^4.1",
