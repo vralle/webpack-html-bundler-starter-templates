@@ -27,7 +27,7 @@
     "dprint": "^0.51",
     "eslint": "^9.29",
     "eslint-plugin-jsdoc": "^61.1",
-    "globals": "^16.2",
+    "globals": "^17.0",
     "malva": "^0.15",
     "markdownlint-cli2": "^0.20",
     "postcss": "^8.5",
