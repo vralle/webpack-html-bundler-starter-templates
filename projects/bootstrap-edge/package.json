@@ -28,7 +28,7 @@
     "css-minimizer-webpack-plugin": "^8.0",
     "glob": "^13.0",
     "html-bundler-webpack-plugin": "^4.20",
-    "html-minimizer-webpack-plugin": "^5.0",
+    "html-minimizer-webpack-plugin": "^6.0",
     "image-minimizer-webpack-plugin": "^5.0",
     "lightningcss": "^1.30",
     "markdownlint-cli2": "^0.21",
