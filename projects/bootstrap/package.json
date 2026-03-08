@@ -25,7 +25,7 @@
     "autoprefixer": "^10.4",
     "babel-loader": "^10.0",
     "css-loader": "^7.1",
-    "css-minimizer-webpack-plugin": "^7.0",
+    "css-minimizer-webpack-plugin": "^8.0",
     "glob": "^13.0",
     "html-bundler-webpack-plugin": "^4.20",
     "image-minimizer-webpack-plugin": "^4.1",
