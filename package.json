@@ -19,7 +19,7 @@
   "devDependencies": {
     "@biomejs/biome": "^2.0",
     "@dprint/json": "^0.21",
-    "@dprint/typescript": "^0.95",
+    "@dprint/typescript": "^0.96",
     "@eslint/js": "^9.29",
     "@stylistic/eslint-plugin": "^5.1",
     "@vitest/eslint-plugin": "^1.2",
