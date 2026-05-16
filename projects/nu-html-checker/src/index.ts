@@ -132,7 +132,7 @@ function validate(files: string[], options: Options = {}) {
   const logger = options.logger ? options.logger : defaultLogger;
   const ignores = options.ignores ? options.ignores : IGNORES;
 
-  execFile("java", ["-version"], { maxBuffer: MAX_BUFFER, shell: true }, (error, _stdout, stderr) => {
+  execFile("java", ["-version"], { maxBuffer: MAX_BUFFER, shell: false }, (error, _stdout, stderr) => {
     if (error) {
       console.error(styleText("red", "Java is missing. Nu validation stopped."));
       console.error(error);
@@ -174,7 +174,7 @@ function validate(files: string[], options: Options = {}) {
 
     const args = [
       "-jar",
-      `"${vnu}"`,
+      vnu,
       "--format",
       "json",
       "--asciiquotes",
@@ -189,7 +189,7 @@ function validate(files: string[], options: Options = {}) {
 
     if (ignores.length > 0) {
       const ignoresArgs = ignores.join("|");
-      args.push(`--filterpattern "${ignoresArgs}"`);
+      args.push("--filterpattern", ignoresArgs);
     }
 
     console.info(styleText("blue", "Nu validation start running..."));
@@ -200,7 +200,7 @@ function validate(files: string[], options: Options = {}) {
       "java",
       [...args, ...files],
       {
-        shell: true,
+        shell: false,
         stdio: "pipe",
       },
     );
